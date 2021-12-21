@@ -1,0 +1,16 @@
+version: '2'
+services:
+  database:
+    image: postgres:11
+    container_name: 'eagle_eye_local-cont'
+    environment:
+      POSTGRES_USER: taff
+      POSTGRES_DB: eagle
+      POSTGRES_PASSWORD: suva
+    ports:
+      - 5434:5432
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:

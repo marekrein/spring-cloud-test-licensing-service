@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: licensingservice
+  cloud:
+    config:
+      enabled: true
+#encrypt:
+#  key: "IMSYMMETRIC"
+server:
+  port: 8093
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
